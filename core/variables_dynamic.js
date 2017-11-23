@@ -34,10 +34,33 @@ goog.require('Blockly.VariableModel');
 goog.require('Blockly.Workspace');
 goog.require('goog.string');
 
+
+/**
+ * Prompt the user for a new variable name.
+ * @param {string} promptText The string of the prompt.
+ * @param {string} defaultText The default value to show in the prompt's field.
+ * @param {function(?string)} callback A callback. It will return the new
+ *     variable name, or null if the user picked something illegal.
+ */
+Blockly.VariablesDynamic.promptType = function(promptText, defaultText, callback) {
+    Blockly.prompt(promptText, defaultText, function(newVarType) {
+        // Merge runs of whitespace.  Strip leading and trailing whitespace.
+        // Beyond this, all types are legal.
+        if (newVarType) {
+            newVarType = newVarType.replace(/[\s\xa0]+/g, ' ').replace(/^ | $/g, '');
+        }
+        callback(newVarType);
+    });
+};
 Blockly.VariablesDynamic.onCreateVariableButtonClick = function(button) {
-    workspace.createVariable("abc", "string");
-    workspace.createVariable("123", "number");
-    workspace.createVariable("abcd", "string");
+    Blockly.VariablesDynamic.promptType(Blockly.Msg.NEW_VARIABLE_TYPE_TITLE, '', function(type) {
+        if (type) {
+            Blockly.Variables.createVariable(button.getTargetWorkspace(), null, type);
+        }
+    });
+    // workspace.createVariable("abc", "string");
+    // workspace.createVariable("123", "number");
+    // workspace.createVariable("abcd", "string");
 };
 /**
  * Construct the elements (blocks and button) required by the flyout for the
