@@ -87,9 +87,9 @@ Blockly.HSV_VALUE = 0.65;
  * Sprited icons and images.
  */
 Blockly.SPRITE = {
-  width: 96,
-  height: 124,
-  url: 'sprites.png'
+    width: 96,
+    height: 124,
+    url: 'sprites.png'
 };
 
 // Constants below this point are not intended to be changed.
@@ -241,6 +241,13 @@ Blockly.DELETE_AREA_TOOLBOX = 2;
  * @const {string}
  */
 Blockly.VARIABLE_CATEGORY_NAME = 'VARIABLE';
+/**
+ * String for use in the "custom" attribute of a category in toolbox xml.
+ * This string indicates that the category should be dynamically populated with
+ * variable blocks.
+ * @const {string}
+ */
+Blockly.VARIABLE_DYNAMIC_CATEGORY_NAME = 'VARIABLES_DYNAMIC';
 
 /**
  * String for use in the "custom" attribute of a category in toolbox xml.

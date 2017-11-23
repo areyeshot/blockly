@@ -62,6 +62,8 @@ Blockly.Msg.LISTS_HUE = '260';
 Blockly.Msg.COLOUR_HUE = '20';
 /// {{Notranslate}} Hue value for all variable blocks.
 Blockly.Msg.VARIABLES_HUE = '330';
+/// {{Notranslate}} Hue value for all variable blocks.
+Blockly.Msg.VARIABLES_DYNAMIC_HUE = '310';
 /// {{Notranslate}} Hue value for all procedure blocks.
 Blockly.Msg.PROCEDURES_HUE = '290';
 
@@ -626,11 +628,11 @@ Blockly.Msg.TEXT_CHARAT_HELPURL = 'https://github.com/google/blockly/wiki/Text#e
 /// https://github.com/google/blockly/wiki/Text#extracting-a-single-character].
 /// [[File:Blockly-text-get.png]]
 Blockly.Msg.TEXT_CHARAT_TITLE = 'in text %1 %2'
-/// dropdown - Indicates that the letter (or number, punctuation character, etc.) with the
-/// specified index should be obtained from the preceding piece of text.  See
-/// [https://github.com/google/blockly/wiki/Text#extracting-a-single-character
-/// https://github.com/google/blockly/wiki/Text#extracting-a-single-character].
-/// [[File:Blockly-text-get.png]]
+    /// dropdown - Indicates that the letter (or number, punctuation character, etc.) with the
+    /// specified index should be obtained from the preceding piece of text.  See
+    /// [https://github.com/google/blockly/wiki/Text#extracting-a-single-character
+    /// https://github.com/google/blockly/wiki/Text#extracting-a-single-character].
+    /// [[File:Blockly-text-get.png]]
 Blockly.Msg.TEXT_CHARAT_FROM_START = 'get letter #';
 /// block text - Indicates that the letter (or number, punctuation character, etc.) with the
 /// specified index from the end of a given piece of text should be obtained. See
