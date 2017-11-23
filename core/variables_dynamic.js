@@ -34,7 +34,11 @@ goog.require('Blockly.VariableModel');
 goog.require('Blockly.Workspace');
 goog.require('goog.string');
 
-
+Blockly.VariablesDynamic.onCreateVariableButtonClick = function(button) {
+    workspace.createVariable("abc", "string");
+    workspace.createVariable("123", "number");
+    workspace.createVariable("abcd", "string");
+};
 /**
  * Construct the elements (blocks and button) required by the flyout for the
  * variable category.
@@ -47,12 +51,7 @@ Blockly.VariablesDynamic.flyoutCategory = function(workspace) {
     button.setAttribute('text', Blockly.Msg.NEW_VARIABLE);
     button.setAttribute('callbackKey', 'CREATE_VARIABLE');
 
-    workspace.registerButtonCallback('CREATE_VARIABLE', function(button) {
-        //Blockly.Variables.createVariable(button.getTargetWorkspace());
-        workspace.createVariable("abc", "string");
-        workspace.createVariable("123", "number");
-        workspace.createVariable("abcd", "string");
-    });
+    workspace.registerButtonCallback('CREATE_VARIABLE', Blockly.VariablesDynamic.onCreateVariableButtonClick);
 
     xmlList.push(button);
 
